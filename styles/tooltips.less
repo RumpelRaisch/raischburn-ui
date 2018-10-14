@@ -12,7 +12,7 @@
 
     .tooltip-inner {
         background-color: @tooltip-background;
-        border-radius: 3px;
+        border-radius: max(4px, @component-border-radius * 2);
         color: @color-pink-text;
         line-height: 1;
         max-width: 100%;
@@ -57,7 +57,7 @@
         padding: .15em .4em;
         margin: 0 -.3em 0 .25em;
         border-radius: max(2px, @component-border-radius / 2);
-        color: @text-color-selected;
-        background: @background-color-selected;
+        color: @color-pink-text;
+        background: @color-pink-highlight;
     }
 }
