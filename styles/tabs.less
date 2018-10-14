@@ -14,13 +14,14 @@
     height: @tab-height;
     line-height: @tab-height;
     font-size: @font-size;
+    border-bottom: solid 2px rgba(0,0,0,0.4);
     border-right: 1px solid @tab-border-color;
     background-color: @tab-background-color;
     &.active {
       color: @text-color-selected;
       background-color: @tab-background-color-active;
+      border-bottom: solid 2px @color-pink;
     }
-
 
     // Modified Icon (the circle) -------------------
     &.modified:not(:hover) .close-icon {
@@ -29,19 +30,19 @@
       margin-top: -3px;
       border-color: @text-color-info;
     }
+
     &.modified:hover .close-icon {
       color: currentColor;
     }
-
 
     // Close Icon (the X) -------------------
     .close-icon:hover {
       color: @text-color-selected;
     }
+
     &.active .close-icon:hover {
       color: @text-color;
     }
-
 
     // Dragging -------------------
     // Styles get applied while dragging a tab

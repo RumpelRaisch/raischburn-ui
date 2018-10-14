@@ -7,8 +7,24 @@
 // Overrides: atom/status-bar
 
 .status-bar {
-  font-size: @font-size;
-  color: @text-color;
-  border-top: 1px solid @base-border-color;
-  background-color: @tree-view-background-color;
+    font-size: @font-size;
+    color: @color-pink;
+    border-top: 1px solid @base-border-color;
+    background-color: @tree-view-background-color;
+
+    a {
+        color: @color-pink;
+
+        &:hover {
+            color: lighten(@color-pink, 15%);
+        }
+    }
+
+    .inline-block {
+        color: @color-pink;
+
+        &:hover {
+            color: lighten(@color-pink, 15%);
+        }
+    }
 }

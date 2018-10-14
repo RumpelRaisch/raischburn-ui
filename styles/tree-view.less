@@ -18,3 +18,148 @@
     color: @text-color-selected;
   }
 }
+
+atom-panel-container.left {
+    .tree-view-root {
+        font-family: @font-family;
+        font-size: 1.1em;
+    }
+
+    .entries.list-group,
+    .entries.list-tree {
+        .directory.entry.list-nested-item, .file.entry.list-item {
+            &.selected {
+                &::before {
+                    background: fadeout(@color-white, 90%);
+                    border-left: solid 3px @color-pink;
+                }
+            }
+        }
+
+        li.entry.list-item:not(.list-nested-item) {
+            color: @color-tree-default;
+
+            &.selected {
+                color: lighten(@color-tree-default, 15%);
+            }
+
+            &.status {
+                color: @color-tree-default;
+
+                &.selected {
+                    color: lighten(@color-tree-default, 15%);
+                }
+            }
+
+            &.status-added {
+                color: @color-tree-added;
+
+                &.selected {
+                    color: lighten(@color-tree-added, 25%);
+                }
+            }
+
+            &.status-ignored {
+                color: @color-tree-ignored;
+
+                &.selected {
+                    color: lighten(@color-tree-ignored, 15%);
+                }
+            }
+
+            &.status-modified {
+                color: @color-tree-modified;
+
+                &.selected {
+                    color: lighten(@color-tree-modified, 25%);
+                }
+            }
+
+            &.status-removed {
+                color: @color-tree-removed;
+
+                &.selected {
+                    color: lighten(@color-tree-removed, 15%);
+                }
+            }
+
+            &.status-renamed {
+                color: @color-tree-renamed;
+
+                &.selected {
+                    color: lighten(@color-tree-renamed, 15%);
+                }
+            }
+        }
+
+        li.entry.list-nested-item {
+            > .list-item {
+                color: @color-tree-default;
+            }
+
+            &.selected > .list-item {
+                color: lighten(@color-tree-default, 15%);
+            }
+
+            &.status {
+                > .list-item {
+                    color: @color-tree-default;
+                }
+
+                &.selected > .list-item {
+                    color: lighten(@color-tree-default, 15%);
+                }
+            }
+
+            &.status-added {
+                > .list-item {
+                    color: @color-tree-added;
+                }
+
+                &.selected > .list-item {
+                    color: lighten(@color-tree-added, 25%);
+                }
+            }
+
+            &.status-ignored {
+                > .list-item {
+                    color: @color-tree-ignored;
+                }
+
+                &.selected > .list-item {
+                    color: lighten(@color-tree-ignored, 15%);
+                }
+            }
+
+            &.status-modified {
+                > .list-item {
+                    color: @color-tree-modified;
+                }
+
+                &.selected > .list-item {
+                    color: lighten(@color-tree-modified, 25%);
+                }
+            }
+
+            &.status-removed {
+                > .list-item {
+                    color: @color-tree-removed;
+                }
+
+                &.selected > .list-item {
+                    color: lighten(@color-tree-removed, 15%);
+                }
+            }
+
+            &.status-renamed {
+                > .list-item {
+                    color: @color-tree-renamed;
+                }
+
+                &.selected > .list-item {
+                    color: lighten(@color-tree-renamed, 15%);
+                }
+            }
+        }
+    }
+}

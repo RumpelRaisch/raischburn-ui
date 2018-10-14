@@ -1,0 +1,15 @@
+.tool-bar {
+    &.tool-bar-horizontal .tool-bar-spacer {
+        border-left: 1px solid #444;
+        border-right: 1px solid #333;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0.7),rgba(0,0,0,1),rgba(0,0,0,0.7), rgba(0,0,0,0));
+        margin: 5px 0;
+    }
+
+    &.tool-bar-vertical .tool-bar-spacer {
+        border-bottom: 1px solid #444;
+        border-top: 1px solid #333;
+        -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0.7),rgba(0,0,0,1),rgba(0,0,0,0.7), rgba(0,0,0,0));
+        margin: 0 5px;
+    }
+}

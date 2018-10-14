@@ -5,19 +5,59 @@
 // Overrides: Bootstrap's `.tooltip`.
 
 
-.tooltip {
-  .tooltip-inner {
-    line-height: 1;
-    padding: .75em;
-    white-space: nowrap;
-    max-width: none;
-  }
+@tooltip-background: fadeout(@color-pink, 10%);
 
-  .keystroke {
-    padding: .15em .4em;
-    margin: 0 -.3em 0 .25em;
-    border-radius: max(2px, @component-border-radius / 2);
-    color: @text-color-selected;
-    background: @background-color-selected;
-  }
+.tooltip {
+    max-width: 100%;
+
+    .tooltip-inner {
+        background-color: @tooltip-background;
+        border-radius: 3px;
+        color: @color-pink-text;
+        line-height: 1;
+        max-width: 100%;
+        padding: .75em;
+        white-space: nowrap;
+        word-wrap: break-word;
+    }
+
+    &.top .tooltip-arrow {
+        border-top-color: @tooltip-background;
+    }
+
+    &.top-left .tooltip-arrow {
+        border-top-color: @tooltip-background;
+    }
+
+    &.top-right .tooltip-arrow {
+        border-top-color: @tooltip-background;
+    }
+
+    &.right .tooltip-arrow {
+        border-right-color: @tooltip-background;
+    }
+
+    &.left .tooltip-arrow {
+        border-left-color: @tooltip-background;
+    }
+
+    &.bottom .tooltip-arrow {
+        border-bottom-color: @tooltip-background;
+    }
+
+    &.bottom-left .tooltip-arrow {
+        border-bottom-color: @tooltip-background;
+    }
+
+    &.bottom-right .tooltip-arrow {
+        border-bottom-color: @tooltip-background;
+    }
+
+    .keystroke {
+        padding: .15em .4em;
+        margin: 0 -.3em 0 .25em;
+        border-radius: max(2px, @component-border-radius / 2);
+        color: @text-color-selected;
+        background: @background-color-selected;
+    }
 }
