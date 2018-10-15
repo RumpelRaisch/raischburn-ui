@@ -64,10 +64,10 @@
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color:              @base-border-color;
 
-@tab-bar-background-color:    @base-background-color;
+@tab-bar-background-color:    lighten(@base-background-color, 5%);
 @tab-bar-border-color:        @base-border-color;
 @tab-background-color:        @tab-bar-background-color;
-@tab-background-color-active: lighten(@tab-bar-background-color, 10%);
+@tab-background-color-active: @base-background-color;
 @tab-border-color:            @base-border-color;
 
 @tree-view-background-color: @base-background-color;
@@ -91,7 +91,7 @@
 @component-icon-size: 16px;
 @component-line-height: 25px;
 
-@tab-height: 30px;
+@tab-height: 40px;
 
 // Misc
 @component-border-radius: 2px;

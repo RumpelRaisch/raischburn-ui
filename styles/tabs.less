@@ -6,53 +6,78 @@
 // Overrides: atom/tabs
 
 .tab-bar {
-  background-color: @tab-bar-background-color;
-  border-bottom: 1px solid @base-border-color;
+    background-color: @tab-bar-background-color;
+    border-bottom: 1px solid @base-border-color;
 
-  .tab {
-    color: @text-color;
-    height: @tab-height;
-    line-height: @tab-height;
-    font-size: @font-size;
-    border-bottom: solid 2px rgba(0,0,0,0.4);
-    border-right: 1px solid @tab-border-color;
-    background-color: @tab-background-color;
-    &.active {
-      color: @text-color-selected;
-      background-color: @tab-background-color-active;
-      border-bottom: solid 2px @color-pink;
-    }
+    .tab {
+        color: @text-color;
+        height: @tab-height;
+        line-height: @tab-height;
+        font-size: @font-size;
+        // border-bottom: solid 2px rgba(0,0,0,0.4);
+        border-right: 1px solid @tab-border-color;
+        background-color: @tab-background-color;
 
-    // Modified Icon (the circle) -------------------
-    &.modified:not(:hover) .close-icon {
-      top: 50%;
-      right: @component-padding + 4px; // 4px -> half of icon size
-      margin-top: -3px;
-      border-color: @text-color-info;
-    }
+        &[data-type="TreeView"] {
+            border:    0;
+            max-width: none;
+        }
 
-    &.modified:hover .close-icon {
-      color: currentColor;
-    }
+        &.active {
+            color: @text-color-selected;
+            background-color: @tab-background-color-active;
+            // border-bottom: solid 2px @color-pink;
 
-    // Close Icon (the X) -------------------
-    .close-icon:hover {
-      color: @text-color-selected;
-    }
+            &::after {
+                width: 100%;
+                left: 0px;
+                opacity: 1;
+                background: @color-pink;
+            }
+        }
 
-    &.active .close-icon:hover {
-      color: @text-color;
-    }
+        // Modified Icon (the circle) -------------------
+        &.modified:not(:hover) .close-icon {
+            top: 50%;
+            right: @component-padding + 4px; // 4px -> half of icon size
+            margin-top: -3px;
+            border-color: @text-color-info;
+        }
 
-    // Dragging -------------------
-    // Styles get applied while dragging a tab
-    &.is-dragging {
-      background: darken(@tab-background-color, 10%);
-      border-color: transparent;
-      opacity: .5;
-      & .close-icon {
-        visibility: hidden;
-      }
+        &.modified:hover .close-icon {
+            color: currentColor;
+        }
+
+        // Close Icon (the X) -------------------
+        .close-icon:hover {
+            color: @text-color-selected;
+        }
+
+        &.active .close-icon:hover {
+            color: @text-color;
+        }
+
+        // Dragging -------------------
+        // Styles get applied while dragging a tab
+        &.is-dragging {
+            background: darken(@tab-background-color, 10%);
+            border-color: transparent;
+            opacity: .5;
+            & .close-icon {
+                visibility: hidden;
+            }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          z-index: 999;
+          bottom: -2px;
+          left: 50%;
+          opacity: 0;
+          transition: linear 0.3s width, linear 0.3s left, linear 0.3s opacity;
+        }
     }
-  }
 }
