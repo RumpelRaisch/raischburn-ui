@@ -7,22 +7,22 @@
 
 
 .tree-view-resizer {
-  border-right: 1px solid @base-border-color;
+    border-right: 1px solid @base-border-color;
 }
 
 .tree-view {
-  color: @text-color;
-  background-color: @tree-view-background-color;
+    color: @text-color;
+    background-color: @tree-view-background-color;
 
-  .list-item.selected {
-    color: @text-color-selected;
-  }
+    .list-item.selected {
+        color: @text-color-selected;
+    }
 }
 
 atom-panel-container.left {
     .tree-view-root {
         font-family: @font-family;
-        font-size: 1.1em;
+        font-size: @font-size * 0.9;
     }
 
     .entries.list-group,
