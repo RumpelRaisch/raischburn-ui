@@ -17,6 +17,7 @@
         // border-bottom: solid 2px rgba(0,0,0,0.4);
         border-right: 1px solid @tab-border-color;
         background-color: @tab-background-color;
+        transition: ease 0.5s all;
 
         &[data-type="TreeView"] {
             border:    0;
@@ -26,6 +27,7 @@
         &.active {
             color: @text-color-selected;
             background-color: @tab-background-color-active;
+            transition: ease 0.5s all;
             // border-bottom: solid 2px @color-pink;
 
             &::after {
@@ -80,4 +82,9 @@
           transition: linear 0.3s width, linear 0.3s left, linear 0.3s opacity;
         }
     }
+}
+
+atom-dock .tab-bar .tab,
+atom-dock .tab-bar .tab.active {
+    max-width: none;
 }
