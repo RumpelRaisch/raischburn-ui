@@ -11,11 +11,18 @@
 }
 
 .tree-view {
-    color: @color-tree-default;
+    // color: @color-tree-default;
+    // background-color: @tree-view-background-color;
+    //
+    // .list-item.selected {
+    //     color: lighten(@color-tree-default, 15%);
+    // }
+
+    color: @text-color;
     background-color: @tree-view-background-color;
 
     .list-item.selected {
-        color: lighten(@color-tree-default, 15%);
+        color: lighten(@text-color, 15%);
     }
 }
 
@@ -37,17 +44,31 @@ atom-panel-container.left {
         }
 
         li.entry.list-item:not(.list-nested-item) {
-            color: @color-tree-default;
+            // color: @color-tree-default;
+            //
+            // &.selected {
+            //     color: lighten(@color-tree-default, 15%);
+            // }
+            //
+            // &.status {
+            //     color: @color-tree-default;
+            //
+            //     &.selected {
+            //         color: lighten(@color-tree-default, 15%);
+            //     }
+            // }
+
+            color: @text-color;
 
             &.selected {
-                color: lighten(@color-tree-default, 15%);
+                color: lighten(@text-color, 15%);
             }
 
             &.status {
-                color: @color-tree-default;
+                color: @text-color;
 
                 &.selected {
-                    color: lighten(@color-tree-default, 15%);
+                    color: lighten(@text-color, 15%);
                 }
             }
 
@@ -93,21 +114,39 @@ atom-panel-container.left {
         }
 
         li.entry.list-nested-item {
+            // > .list-item {
+            //     color: @color-tree-default;
+            // }
+            //
+            // &.selected > .list-item {
+            //     color: lighten(@color-tree-default, 15%);
+            // }
+            //
+            // &.status {
+            //     > .list-item {
+            //         color: @color-tree-default;
+            //     }
+            //
+            //     &.selected > .list-item {
+            //         color: lighten(@color-tree-default, 15%);
+            //     }
+            // }
+
             > .list-item {
-                color: @color-tree-default;
+                color: @text-color;
             }
 
             &.selected > .list-item {
-                color: lighten(@color-tree-default, 15%);
+                color: lighten(@text-color, 15%);
             }
 
             &.status {
                 > .list-item {
-                    color: @color-tree-default;
+                    color: @text-color;
                 }
 
                 &.selected > .list-item {
-                    color: lighten(@color-tree-default, 15%);
+                    color: lighten(@text-color, 15%);
                 }
             }
 
