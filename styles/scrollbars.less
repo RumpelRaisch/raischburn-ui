@@ -9,21 +9,20 @@
     ::-webkit-scrollbar-track,
     /deep/ ::-webkit-scrollbar-corner,
     /deep/ ::-webkit-scrollbar-track {
-        background: fadeout(@color-white, 98%);
+        background: lighten(@base-background-color, 2%);
         box-shadow: 0;
         width: 20px;
     }
 
     ::-webkit-scrollbar-thumb,
     /deep/ ::-webkit-scrollbar-thumb {
-        background: fadeout(@color-white, 95%);
+        background: fadeout(@color-white, 98%);
         border-radius: 4px;
         border: 0;
-        border: solid 1px @background-color-highlight;
         background-clip: content-box;
 
         &:hover {
-            background: fadeout(@color-white, 90%);
+            background: fadeout(@color-white, 95%);
         }
     }
     &.panel-contrast {
@@ -31,7 +30,7 @@
         .remote-ftp-view > .scroller,
         .tree-view-scroller {
             &::-webkit-scrollbar-track {
-                background: fadeout(@color-white, 98%);
+                background: lighten(@base-background-color, 2%);
             }
         }
     }
