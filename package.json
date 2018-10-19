@@ -17,10 +17,10 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "configSchema": {
-    "uiBackground": {
-      "title": "UI Background",
+    "theme": {
+      "title": "UI Theme",
       "order": 1,
-      "description": "Select a UI background. If not all UI parts change color, you should restart Atom.",
+      "description": "Select a UI theme. If not all UI parts change color, you should restart Atom.",
       "type": "string",
       "enum": [
         "dark",

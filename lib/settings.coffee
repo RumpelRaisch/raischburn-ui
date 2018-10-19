@@ -3,17 +3,17 @@ module.exports =
 
     self = @
 
-    # ONCE PACKAGE IS LOADED
-    if self.isLoaded('raischburn-ui')
+    # SET THEME
+    self.setTheme atom.config.get('raischburn-ui.theme'), false
 
-      # ADD COMMANDS TO ATOM
-      atom.commands.add 'atom-workspace',
-        "raischburn-ui:dark":   => @setTheme('dark')
-        "raischburn-ui:darker": => @setTheme('darker')
+    # ADD COMMANDS TO ATOM
+    atom.commands.add 'atom-workspace',
+      "raischburn-ui:dark":   => @setTheme('dark')
+      "raischburn-ui:darker": => @setTheme('darker')
 
-      # WHEN SYNTAX THEME CHANGES
-      atom.config.onDidChange 'raischburn-ui.uiBackground', (value) ->
-        self.setTheme value.newValue
+    # WHEN UI THEME CHANGES
+    atom.config.onDidChange 'raischburn-ui.theme', (value) ->
+      self.setTheme value.newValue, value.oldValue
 
   # CHECKS IF A PACKAGE IS LOADED
   isLoaded: (which) ->
@@ -45,11 +45,18 @@ module.exports =
     setImmediate ->
       return self.package.activate()
 
-  setTheme: (theme) ->
+  # SET THEME
+  setTheme: (theme, previous) ->
+    if theme == previous
+      return null
+
     self = @
     fs = require('fs')
     pkg = @package
     themeData = '@user-background-color: @color-background-' + theme.toLowerCase() + ';\n'
+
+    # SAVE TO ATOM CONFIG
+    atom.config.set 'raischburn-ui.theme', theme
 
     # CHECK CURRENT THEME FILE
     fs.readFile pkg.path + '/styles/user.less', 'utf8', (err, fileData) ->
