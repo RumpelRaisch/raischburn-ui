@@ -14,21 +14,17 @@
         height: @tab-height;
         line-height: @tab-height;
         font-size: @font-size;
-        // border-bottom: solid 2px rgba(0,0,0,0.4);
         border-right: 1px solid @tab-border-color;
         background-color: @tab-background-color;
         transition: ease 0.5s all;
-
-        &[data-type="TreeView"] {
-            border:    0;
-            max-width: none;
-        }
+        max-width: 15rem;
+        min-width: 5rem;
 
         &.active {
-            color: @text-color-selected;
             background-color: @tab-background-color-active;
+            color: @text-color-selected;
             transition: ease 0.5s all;
-            // border-bottom: solid 2px @color-pink;
+            max-width: 20rem;
 
             &::after {
                 width: 100%;
@@ -65,21 +61,22 @@
             background: darken(@tab-background-color, 10%);
             border-color: transparent;
             opacity: .5;
+
             & .close-icon {
                 visibility: hidden;
             }
         }
 
         &::after {
-          content: '';
-          position: absolute;
-          width: 0%;
-          height: 2px;
-          z-index: 999;
-          bottom: -2px;
-          left: 50%;
-          opacity: 0;
-          transition: linear 0.3s width, linear 0.3s left, linear 0.3s opacity;
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            z-index: 999;
+            bottom: -2px;
+            left: 50%;
+            opacity: 0;
+            transition: linear 0.3s width, linear 0.3s left, linear 0.3s opacity;
         }
     }
 }
@@ -87,4 +84,8 @@
 atom-dock .tab-bar .tab,
 atom-dock .tab-bar .tab.active {
     max-width: none;
+
+    &[data-type="TreeView"] {
+        border: 0;
+    }
 }
