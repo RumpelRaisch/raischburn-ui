@@ -11,19 +11,19 @@
 }
 
 .tree-view {
-    // color: @color-tree-default;
-    // background-color: @tree-view-background-color;
-    //
-    // .list-item.selected {
-    //     color: lighten(@color-tree-default, 15%);
-    // }
-
-    color: @text-color;
+    color: @color-tree-default;
     background-color: @tree-view-background-color;
 
     .list-item.selected {
-        color: lighten(@text-color, 15%);
+        color: lighten(@color-tree-default, 15%);
     }
+
+    // color: @text-color;
+    // background-color: @tree-view-background-color;
+    //
+    // .list-item.selected {
+    //     color: lighten(@text-color, 15%);
+    // }
 }
 
 atom-panel-container.left {
@@ -44,39 +44,39 @@ atom-panel-container.left {
         }
 
         li.entry.list-item:not(.list-nested-item) {
-            // color: @color-tree-default;
-            //
-            // &.selected {
-            //     color: lighten(@color-tree-default, 15%);
-            // }
-            //
-            // &.status {
-            //     color: @color-tree-default;
-            //
-            //     &.selected {
-            //         color: lighten(@color-tree-default, 15%);
-            //     }
-            // }
-
-            color: @text-color;
+            color: @color-tree-default;
 
             &.selected {
-                color: lighten(@text-color, 15%);
+                color: lighten(@color-tree-default, 15%);
             }
 
             &.status {
-                color: @text-color;
+                color: @color-tree-default;
 
                 &.selected {
-                    color: lighten(@text-color, 15%);
+                    color: lighten(@color-tree-default, 15%);
                 }
             }
+
+            // color: @text-color;
+            //
+            // &.selected {
+            //     color: lighten(@text-color, 15%);
+            // }
+            //
+            // &.status {
+            //     color: @text-color;
+            //
+            //     &.selected {
+            //         color: lighten(@text-color, 15%);
+            //     }
+            // }
 
             &.status-added {
                 color: @color-tree-added;
 
                 &.selected {
-                    color: lighten(@color-tree-added, 25%);
+                    color: lighten(@color-tree-added, 15%);
                 }
             }
 
@@ -92,7 +92,7 @@ atom-panel-container.left {
                 color: @color-tree-modified;
 
                 &.selected {
-                    color: lighten(@color-tree-modified, 25%);
+                    color: lighten(@color-tree-modified, 15%);
                 }
             }
 
@@ -114,41 +114,41 @@ atom-panel-container.left {
         }
 
         li.entry.list-nested-item {
-            // > .list-item {
-            //     color: @color-tree-default;
-            // }
-            //
-            // &.selected > .list-item {
-            //     color: lighten(@color-tree-default, 15%);
-            // }
-            //
-            // &.status {
-            //     > .list-item {
-            //         color: @color-tree-default;
-            //     }
-            //
-            //     &.selected > .list-item {
-            //         color: lighten(@color-tree-default, 15%);
-            //     }
-            // }
-
             > .list-item {
-                color: @text-color;
+                color: @color-tree-default;
             }
 
             &.selected > .list-item {
-                color: lighten(@text-color, 15%);
+                color: lighten(@color-tree-default, 15%);
             }
 
             &.status {
                 > .list-item {
-                    color: @text-color;
+                    color: @color-tree-default;
                 }
 
                 &.selected > .list-item {
-                    color: lighten(@text-color, 15%);
+                    color: lighten(@color-tree-default, 15%);
                 }
             }
+
+            // > .list-item {
+            //     color: @text-color;
+            // }
+            //
+            // &.selected > .list-item {
+            //     color: lighten(@text-color, 15%);
+            // }
+            //
+            // &.status {
+            //     > .list-item {
+            //         color: @text-color;
+            //     }
+            //
+            //     &.selected > .list-item {
+            //         color: lighten(@text-color, 15%);
+            //     }
+            // }
 
             &.status-added {
                 > .list-item {
@@ -156,7 +156,7 @@ atom-panel-container.left {
                 }
 
                 &.selected > .list-item {
-                    color: lighten(@color-tree-added, 25%);
+                    color: lighten(@color-tree-added, 15%);
                 }
             }
 
@@ -176,7 +176,7 @@ atom-panel-container.left {
                 }
 
                 &.selected > .list-item {
-                    color: lighten(@color-tree-modified, 25%);
+                    color: lighten(@color-tree-modified, 15%);
                 }
             }
 
